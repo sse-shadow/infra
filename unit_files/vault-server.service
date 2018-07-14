@@ -1,0 +1,13 @@
+[Unit]
+Description=Vault Server running on localhost
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root
+ExecStart=/root/vault server -config vault-config.hcl
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Caddy for TLS and proxy to vault server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root
+ExecStart=/usr/local/bin/caddy
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
